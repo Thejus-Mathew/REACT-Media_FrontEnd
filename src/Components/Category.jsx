@@ -8,8 +8,6 @@ import VideoCard from './VideoCard';
 
 function Category({categoryVideoRemoveResponse}) {
 
-  var insideCategory = false
-
   const[categoryName,setcategoryName] = useState("")
   const[allCategories,setAllCategories] = useState([])
  
@@ -111,7 +109,7 @@ function Category({categoryVideoRemoveResponse}) {
               {
                 cat?.allVideos?.length>0?cat?.allVideos.map((card,index) => (
                   <Col key={index} sm={12} className='mx-5 mt-3' draggable onDragStart={(e)=>videoDragStarted(e,card.id,cat.id)}>
-                    <VideoCard video={card} insideCategory={false}/>
+                    <VideoCard video={card} insideCategory={true}/>
                   </Col>
                 )):<p>No Videos</p>
               }
